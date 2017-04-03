@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Building Your Own Keyboard</title>
+        <meta name="author" content="Priyadi Iman Nurcahyo">
+        <meta name="description" content="Build your own keyboard from scratch">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../reveal.js/css/theme/league.css" id="theme">
+        <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+        <link rel="stylesheet" href="../priyadi/emoji.css">
+
+        <script src="https://use.fontawesome.com/99a168acb7.js"></script>
+        <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+        <script src="../priyadi/emoji.js"></script>
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="../reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Building Your Own Keyboard</h1>
+                    <p>
+                        <small>
+                            by Priyadi Iman Nurcahyo -
+                            <i class="fa fa-envelope"></i> <a href="mailto:priyadi@keyboard.id">priyadi@keyboard.id</a> -
+                            <i class="fa fa-globe"></i> <a href="https://keyboard.id">keyboard.id</a>
+                        </small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Ingredients: Plate and Case Materials</h2>
+                    <ul>
+                        <li>
+                            Material for switch plate<br>
+                            <small>metal plate, 1.5mm thickness, common materials are stainless steel or aluminum alloy</small>
+                        </li>
+                        <li>
+                            Material for case<br>
+                            <small>common materials are acrylic, polycarbonate, metal</small>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Ingredients: Controller Board</h2>
+                    <p>An Atmel AVR controller board with hardware USB is a safe choice, they are:</p>
+                    <ul>
+                        <li>common</li>
+                        <li>well-supported</li>
+                        <li>powerful enough for a keyboard</li>
+                        <li>practically unbrickable</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Ingredients: Controller Board, cont.</h2>
+                    <ul>
+                        <li><b>Teensy 2.0</b>. Very popular but not that common in Indonesia.</li>
+                        <li><b>Teensy++</b>. Similar to Teensy 2.0 but with more pins for larger keyboards.</li>
+                        <li><b>Pro Micro</b>. Cheap and very popular in Indonesia.</li>
+                        <li><b>Adafruit Feather Bluefruit LE 32u4</b>. Supports battery and Bluetooth.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Other Ingredients</h2>
+                    <ul>
+                        <li>Switches and keycaps</li>
+                        <li>1N4148 diodes</li>
+                        <li>Cables</li>
+                        <li>Soldering tin</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Step 1: Design Your Own Layout</h2>
+                    <p>Head over to 'KLE' (<a href="http://www.keyboard-layout-editor.com/">keyboard-layout-editor.com</a>), and start designing!</p>
+                </section>
+
+                <section>
+                    <h2>Step 2: Get Your CAD Files</h2>
+                    <ul>
+                        <li>Copy 'Raw data' of your layout from KLE</li>
+                        <li>Paste into <a href="http://builder.swillkb.com">Swill's Plate &amp; Case Builder</a></li>
+                        <li>You will get an SVG, DXF or EPS file.</li>
+                        <li>Send the file to your favorite laser-cutting workshop (i.e. <a href="http://laserindonesia.com">LaserIndonesia</a>) to get your plate and case.</li>
+                    </ul>
+                    <p>Tips: use your favorite vector graphics editor (i.e. Inkscape or Adobe Illustrator) to fine tune your results.</p>
+                </section>
+
+                <section>
+                    <h2>Step 3: Assemble the Hardware</h2>
+                    <ul>
+                        <li>Install and solder your switches in matrix arrangement</li>
+                        <li>Connect each rows and columns to a pin on the controller</li>
+                        <li>In most cases, any pins other than Vcc, GND, and RST are OK</li>
+                        <li>Don't forget to take note which row/column connected to which pin</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Step 4: Generate Your Firmware</h2>
+                    <ul>
+                        <li>Copy 'Raw data' of your layout from KLE</li>
+                        <li>Go to <a href="http://qmk.sized.io">QMK Firmware Builder</a> and paste your layout raw data.</li>
+                        <li>Define your wiring, pin assignment and your keymap</li>
+                        <li>Get your .hex file</li>
+                        <li>Flash your controller using the resulting .hex file</li>
+                    </ul>
+                    <p>Tips: advanced users can also download the source files and make further customizations using the QMK firmware.</p>
+                </section>
+
+                <section>
+                    <h2>Step 5: There's no Step 5</h2>
+                    <p>That wasn't too hard, right? 😅</p>
+                </section>
+            </div>
+        </div>
+
+        <script src="../reveal.js/lib/js/head.min.js"></script>
+        <script src="../reveal.js/js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: '../reveal.js/plugin/markdown/marked.js' },
+                    { src: '../reveal.js/plugin/markdown/markdown.js' },
+                    { src: '../reveal.js/plugin/notes/notes.js', async: true },
+                    { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
