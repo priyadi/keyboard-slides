@@ -49,7 +49,7 @@
                 </section>
 
                 <section>
-                    <h2>Ingredients: Plate and Case Materials</h2>
+                    <h2>Components: Plate and Case Materials</h2>
                     <ul>
                         <li>
                             Material for switch plate<br>
@@ -64,7 +64,7 @@
                 </section>
 
                 <section>
-                    <h2>Ingredients: Controller Board</h2>
+                    <h2>Components: Controller Board</h2>
                     <p>An Atmel AVR controller board with hardware USB is a safe choice, it is:</p>
                     <ul>
                         <li>common</li>
@@ -72,10 +72,11 @@
                         <li>powerful enough for a keyboard</li>
                         <li>practically unbrickable</li>
                     </ul>
+                    <p>The most popular controller chip is the ATMega32u4.</p>
                 </section>
 
                 <section>
-                    <h2>Ingredients: Controller Board, cont.</h2>
+                    <h2>Components: Controller Board, cont.</h2>
                     <ul>
                         <li><b>Teensy 2.0</b>. Very popular but not that common in Indonesia. Recommended for beginners.</li>
                         <li><b>Teensy++</b>. Similar to Teensy 2.0 but with more pins for larger keyboards.</li>
@@ -85,7 +86,7 @@
                 </section>
 
                 <section>
-                    <h2>Other Ingredients</h2>
+                    <h2>Other Components</h2>
                     <ul>
                         <li>Switches and keycaps. Our procedure supports both Cherry MX and ALPS compatible switches.</li>
                         <li>1N4148 diodes</li>
@@ -96,6 +97,11 @@
                 <section>
                     <h2>Step 1: Design Your Own Layout</h2>
                     <p>Head over to 'KLE' (<a href="http://www.keyboard-layout-editor.com/">keyboard-layout-editor.com</a>), and start designing!</p>
+                    <p>KLE can output a partial JSON metadata called the 'KLE Raw Data' which is the community standard to describe any keyboard layout. Example:</p>
+                    <pre><code class="hljs javascript" data-trim>
+                            [{a:7},"A","B","C"],
+                            [{w:2},"","Z"]
+                    </code></pre>
                 </section>
 
                 <section>
@@ -104,7 +110,7 @@
                         <li>Copy 'Raw data' of your layout from KLE</li>
                         <li>Paste into <a href="http://builder.swillkb.com">Swill's Plate &amp; Case Builder</a></li>
                         <li>You will get SVG, DXF or EPS files.</li>
-                        <li>Send the file to your favorite laser-cutting workshop (i.e. <a href="http://laserindonesia.com">LaserIndonesia</a>) to get your switch plate and case.</li>
+                        <li>Send the files to your favorite laser-cutting workshop (i.e. <a href="http://laserindonesia.com">LaserIndonesia</a>) to get your switch plate and case.</li>
                     </ul>
                     <p>Tips: use your favorite vector graphics editor (i.e. Inkscape or Adobe Illustrator) to fine tune your results.</p>
                 </section>
@@ -138,7 +144,7 @@
 
                 <section>
                     <h2>
-                        Showcase: Let's Split <br>
+                        Showcase: Let's Splits
                     </h2>
                     <div class="container">
                         <div class="row">
@@ -157,7 +163,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
-                                <img src="promethium.jpg" alt="Let's Split" width="100%">
+                                <img src="promethium.jpg" alt="Promethium" width="100%">
                             </div>
                             <div class="col-sm-6">
                                 <p>By Priyadi. Single piece split Planck based keyboard. Adafruit Feather 32u4 controller. USB &amp; Bluetooth. Trackpoint for mouse control. Per switch RGB LED.</p>
@@ -165,6 +171,21 @@
                         </div>
                     </div>
                 </section>
+
+                <section>
+                    <h2>Showcase: Atreus 64</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="atreus64.jpg" alt="Atreus 64" width="100%">
+                            </div>
+                            <div class="col-sm-6">
+                                <p>By Derek Schmell. An Atreus with extra rows and columns. Matias quiet switches. All stainless steel plate and housing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
 
