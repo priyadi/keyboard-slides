@@ -38,7 +38,13 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1>Building Your Own Keyboard</h1>
+                    <h1>Building Your Own<br>⌨&nbsp;Keyboard</h1>
+                    <p>
+                        <small>
+                            Indonesia Mechanical Keyboard Meetup <br>
+                            8 April 2017 - Dattabot Dojo, Senopati, Jakarta
+                        </small>
+                    </p>
                     <p>
                         <small>
                             by Priyadi Iman Nurcahyo -
@@ -46,6 +52,27 @@
                             <i class="fa fa-globe"></i> <a href="https://keyboard.id">keyboard.id</a>
                         </small>
                     </p>
+                </section>
+
+                <section>
+                    <h2>Don't Be Intimidated! <br> It is not a 🚀 Rocket Science</h2>
+                    <ul>
+                        <li>Automatically generated design using tools provided by mechanical keyboard community.</li>
+                        <li>Sandwich case. Simple, easy to understand 2D design.</li>
+                        <li>Laser cut components. No expensive and complicated molding or machining.</li>
+                        <li>No designing by hand required.</li>
+                        <li>No programming required.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Required Tools</h2>
+                    <ul>
+                        <li>Soldering Iron.</li>
+                        <li>(optional) Multimeter.</li>
+                        <li>(optional) Solder sucker.</li>
+                        <li>Screwdriver.</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -88,31 +115,59 @@
                 <section>
                     <h2>Other Components</h2>
                     <ul>
-                        <li>Switches and keycaps. Our procedure supports both Cherry MX and ALPS compatible switches.</li>
+                        <li>Switches and keycaps *</li>
                         <li>1N4148 diodes</li>
                         <li>Cables</li>
                         <li>Soldering tin</li>
+                        <li>Screws</li>
                     </ul>
+                    <p>* Our procedure supports both Cherry MX and ALPS compatible switches.</p>
                 </section>
                 <section>
                     <h2>Step 1: Design Your Own Layout</h2>
                     <p>Head over to 'KLE' (<a href="http://www.keyboard-layout-editor.com/">keyboard-layout-editor.com</a>), and start designing!</p>
-                    <p>KLE can output a partial JSON metadata called the 'KLE Raw Data' which is the community standard to describe any keyboard layout. Example:</p>
-                    <pre><code class="hljs javascript" data-trim>
-                            [{a:7},"A","B","C"],
-                            [{w:2},"","Z"]
-                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>The "KLE Raw Data"</h2>
+                    <p>KLE can output "KLE Raw Data", a partial JSON metadata which is the community standard to describe any keyboard layout.</p>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <img src="5K.png" alt="5K keyboard">
+                            </div>
+                            <div class="col-sm-2"><h2>→</h2></div>
+                            <div class="col-sm-5">
+                                <pre><code class="hljs javascript" data-trim>
+                                        [{a:7},"A","B","C"],
+                                        [{w:2},"","Z"]
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </section>
 
                 <section>
                     <h2>Step 2: Get Your CAD Files</h2>
                     <ul>
                         <li>Copy 'Raw data' of your layout from KLE</li>
-                        <li>Paste into <a href="http://builder.swillkb.com">Swill's Plate &amp; Case Builder</a></li>
+                        <li>Paste into Swill's Plate &amp; Case Builder (<a href="http://builder.swillkb.com">builder.swillkb.com</a>)</li>
                         <li>You will get SVG, DXF or EPS files.</li>
-                        <li>Send the files to your favorite laser-cutting workshop (i.e. <a href="http://laserindonesia.com">LaserIndonesia</a>) to get your switch plate and case.</li>
+                        <li>Send the files to your favorite laser-cutting workshop (i.e. <a href="http://laserindonesia.com">LaserIndonesia.com</a>) to get your switch plate and case.</li>
                     </ul>
-                    <p>Tips: use your favorite vector graphics editor (i.e. Inkscape or Adobe Illustrator) to fine tune your results.</p>
+                </section>
+
+                <section>
+                    <h2>Tips On Laser Cutting</h2>
+
+                    <ul>
+                        <li>Get materials from the laser cutting shop if possible.</li>
+                        <li>Pay attention to kerf compensation value. Ask your laser cutting shop the correct value, or use 0.15mm.</li>
+                        <li>You can use your favorite vector graphics editor (i.e. Inkscape or Adobe Illustrator) to fine tune your results.</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -126,15 +181,35 @@
                 </section>
 
                 <section>
+                    <h2>Matrix Arrangement</h2>
+                    <img src="matrix-with-wires.png" alt="">
+                    <p>Example of standard matrix arrangement for the QMK firmware (COL2ROW setting)</p>
+                    <p><small>Image courtesy of RoastPotatoes.co</small></p>
+                </section>
+
+                <section>
                     <h2>Step 4: Generate Your Firmware</h2>
                     <ul>
                         <li>Copy 'Raw data' of your layout from KLE</li>
-                        <li>Go to <a href="http://qmk.sized.io">QMK Firmware Builder</a> and paste your layout raw data.</li>
+                        <li>Go to QMK Firmware Builder (<a href="http://qmk.sized.io">qmk.sized.io</a>) and paste your layout raw data.</li>
                         <li>Define your wiring, pin assignment and your desired keymap</li>
                         <li>Get your .hex file</li>
                         <li>Flash your controller using the resulting .hex file</li>
                     </ul>
-                    <p><b>Advanced users</b>: you can download the source files and make further customizations using the QMK firmware.</p>
+                </section>
+
+                <section>
+                    <h2>
+                        <img src="qmk.png" class="emoji">
+                        QMK Firmware
+                    </h2>
+                    <p>Advanced users can download the source files and make further customizations using the QMK Firmware.</p>
+
+                    <p>
+                        <a href="http://qmk.fm">http://qmk.fm</a>
+                    </p>
+
+                    <p>Some examples of features not available from the generator: leader key, mousekeys, Unicode output, audio output, Bluetooth, Trackpoint, and more!</p>
                 </section>
 
                 <section>
@@ -177,13 +252,26 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
-                                <img src="atreus64.jpg" alt="Atreus 64" width="100%">
+                                <img src="atreus64-2.jpg" alt="Atreus 64" width="100%">
                             </div>
                             <div class="col-sm-6">
-                                <p>By Derek Schmell. An Atreus with extra rows and columns. Matias quiet switches. All stainless steel plate and housing.</p>
+                                <p>By Derek Schmell. An Atreus with extra rows and columns. Pro Micro controller. Matias quiet switches. All stainless steel plate and housing.</p>
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <section>
+                    <h2>Showcase: [your keyboard here]</h2>
+                    <p>You know what? We could use more keyboard to showcase here 😅</p>
+                </section>
+
+                <section>
+                    <h2>More Keyboard Building Stuff...</h2>
+                    <ul>
+                        <li><a href="https://geekhack.org/index.php?board=117.0">Geekhack - Making Stuff Together</a></li>
+                        <li><a href="https://deskthority.net/workshop-f7/">Deskthority - Workshop</a></li>
+                    </ul>
                 </section>
 
             </div>

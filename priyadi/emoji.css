@@ -8,4 +8,6 @@ img.emoji {
   background: none !important;
   border: 0 !important;
   display: inline !important;
+  height: 1em;
+  vertical-align: bottom;
 }
